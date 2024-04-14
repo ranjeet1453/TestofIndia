@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* background-color: aqua; */
+}
+
+/* Global Tags */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d3325f;
+}
+
+span {
+  font-size: 0.9rem;
+  color: #757373;
+}
+
+h6 {
+  font-size: 1.1rem;
+  color: rgb(24, 24, 49);
+}
+
+
+#expert{
+  padding: 5vw 8vw 10vw 10vw;
+  text-align: center;
+}
+
+#expert .expert-box{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 50px;
+
+}
+
+#expert .expert-box .profile{
+  background-color: #f7ecec;
+  padding: 30px 10px;
+}
+
+.pro-link
+{
+  margin-top: 10px;
+
+}
+.pro-link i{
+  padding: 10px 13px;
+  border: 1px solid rgba(21,21,100);
+  cursor: pointer;
+  transition: 0.3 ease;
+
+}
+.pro-link i:hover{
+  background: rgb(21, 21, 100);
+  border: 1px solid rgba(21,21,100);
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* footer */
+footer{
+  background-color: #101C32;
+  padding: 8vw;
+  display: flex;
+  justify-content: space-between;
+    align-items: flex-start;
+flex-wrap: wrap;
+}
+footer .footer-col{
+  padding-bottom: 40px;
+
+}
+footer h3{
+  color: rgb(241,240,245);
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+footer li{
+  list-style: none;
+  color: #7b837b;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: 0.3 ease;
+}
+
+footer li:hover{
+  color: rgb(241,240,245);;
+}
+
+footer p{
+  color: #7b837b;
+
+}
+footer .subscribe{
+  margin-top: 20px;
+
+}
+footer input{
+  width: 220px;
+  padding: 15px 12px;
+  background: #334F6C;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+footer .subscribe a{
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 14px 25px;
+  background-color: #fff;
+  font-weight: 600;
+  /* border-radius: 5px; */
+
+}
+
+footer .subscribe a.yellow {
+  color: #2c2c2c;
+  background-color: #fdc938;
+  transition: 0.3 ease;
+}
+
+footer .subscribe a.yellow:hover {
+  color: rgb(21, 21, 100);
+  background-color: #fff;
+}
+
+footer .copy{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+footer .copy p{
+  color: #fff;
+}
+
+
+footer .copy .pro-link
+{
+  margin-top: 0px;
+
+}
+footer .copy .pro-link i{
+  background-color: rgb(21, 21, 100);
+  color: #fff;
+}
+footer .copy .pro-link i:hover{
+  background-color: #fdc938;
+  color: #2c2c2c;
+}
+
+/* About */
+
+/* Blog */
+
+/* Course_inner */
+
+/* contact */
+
+/* responsive */
+
+@media (max-width: 769px) {
+
+}
+
+@media (max-width: 475px) {
+
+}
+
+
+#course .courses .details{
+  padding: 15px 15px 0px 15px;
+  }
+
+  .star i{
+      color: #fdc938;
+      font-size: 0.9rem;
+  }
+  #course .courses .cost{
+      background-color: rgb(74,74,136);
+      color: #fff;
+      line-height: 70px;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      right: 15px;
+      bottom: 100px;
+  }
+  #para1{
+    color: white;
+  }

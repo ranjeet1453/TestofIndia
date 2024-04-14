@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <link rel="stylesheet" href="menu.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,500;1,400&display=swap');
+
+
+/* ::-webkit-scrollbar {
+            z-index: 100;
+width: 5px;
+        } /* this targets the default scrollbar (compulsory)
+
+.navbar {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+
+    z-index: 1;
+    background-color: #c9c1ac;
+    border-radius: 0px;
+    padding: 0px 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+        */
+
+
+body {
+    background-image: url("imgs/backg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#logo{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #d3325f;
+    font-size: 29px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+    border: 3px solid #d3325f;
+
+    box-shadow: 0px 4px 3px #ff66a3;
+}
+
+
+
+#searchBar {
+    width: 300px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #f4eee3;
+
+    outline: none;
+    border: 1px solid black;
+    text-transform: capitalize;
+    font-family: 'Questrial', sans-serif;
+}
+
+.btnStyle {
+    background-color: #d3325f;
+    display: inline-block;
+    text-decoration: none;
+
+    font-size: 18px;
+    font-family: 'Noto Serif', serif;
+    color: #fff;
+    padding: 7px 10px;
+    letter-spacing: .1em;
+
+    border-radius: 3px;
+    /* z-index: 1; */
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+
+.btnStyle:hover {
+    background-color: #ff66a3;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16), 0px 6px 10px rgba(0, 0, 0, .23);
+    transform: scale(1.01, 1.01);
+}
+
+.btnStyle3 {
+    background-color: white (252, 235, 235);
+}
+
+.btnStyle3:hover {
+    background-color: #ff66a3;
+}
+
+.body-content {
+    position: relative;
+
+    right: 0px;
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* orders */
+
+.recipe-menu {
+
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.recipe {
+    background-image: url('');
+    background-size: 100% 100%;
+    padding: 10px;
+
+    margin-bottom: 40px;
+    width: 300px;
+    position: relative;
+
+}
+
+.recipe img {
+    width: 105%;
+    height: 60%;
+    border: 3px solid whitesmoke;
+    box-shadow: 0px 1px 3px;
+    border-radius: .25rem;
+}
+
+.name {
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0px 15px;
+}
+
+.popup-div {
+    float: right;
+    font-size: 25px;
+    position: absolute;
+    right: 2px;
+    bottom: 55px;
+    font-family: 'Noto Serif', serif;
+}
+.popup-div2 {
+    float: right;
+    font-size: 25px;
+    position: absolute;
+    right: 2px;
+    bottom: 25px;
+    font-family: 'Noto Serif', serif;
+}
+.popup-div8 {
+    float: right;
+    font-size: 25px;
+    position: absolute;
+    right: 2px;
+    bottom: 25px;
+    font-family: 'Noto Serif', serif;
+}
+
+#popup-imgs {
+    width: 50%;
+    height:87%;
+}
+
+.popup-price{
+    display: flex;
+    gap: 70px;
+    margin-top: 90px;
+    position: relative;
+    top: 50px;
+    font-family: 'Noto Serif', serif;
+}
+.popup-price2{
+    display: flex;
+    gap: 70px;
+    margin-top: 90px;
+    position: relative;
+    top: 22px;
+    font-family: 'Noto Serif', serif;
+}
+.popup-price8{
+    display: flex;
+    gap: 70px;
+    margin-top: 90px;
+    position: relative;
+    top: 22px;
+    font-family: 'Noto Serif', serif;
+}
+
+#Close {
+    background-color: rgb(34, 206, 34);
+    padding: 8px 43px;
+    cursor: pointer;
+    margin-right: 15px;
+    font-family: 'Noto Serif', serif;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 50%;
+    height: 37%;
+}
+
+
+
+
+@media (max-width: 930px) {
+    .body-content {
+        flex-direction: column;
+    }
+
+    body {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1970px) {
+    .body-content {
+        flex-direction: column;
+    }
+
+    body {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 1500px) {
+    .body-content {
+        flex-direction: column;
+    }
+
+    body {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        padding: 0px 10px;
+    }
+}
+
+@media (max-width: 280px) {
+    .navbar .btnStyle {
+        font-size: 12px;
+    }
+
+    .navbar {
+        font-size: 12px;
+        }
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2 id="logo">PET PUJA</h2>
+
+        <input type="text" autocomplete="off" placeholder="Search here.." id="searchBar">
+
+
+        <a href="home.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="width: 50px; height:50px;" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg></a>
+        <a href="menu.html">
+            <!-- <img src="logo.jpg" height='50' width='50' class="rounded-circle "> -->
+        </a>
+    </nav>
+
+    <div class="body-content">
+        <div class="recipe-menu">
+
+            <!-- Recipe 1 -->
+            <div class="recipe">
+                <p class="name">Hamburger</p>
+                <img src="/imgs/hamburger.png">
+
+                <p class="price"><span>Rs. </span>150</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 2 -->
+            <div class="recipe">
+                <p class="name">Pav Bhaji</p>
+                <img style="height: 280px;" src="/imgs/pav_bhaji.jpeg">
+
+                <p class="price"><span>Rs. </span>100</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup2()">Add to cart</button>
+
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="recipe">
+                <p class="name">Pizza</p>
+                <img src="/imgs/pizza.jpeg">
+
+                <p class="price"><span>Rs. </span>120</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup3()">Add to cart</button>
+
+            </div>
+
+            <!-- Recipe 4 -->
+            <div class="recipe">
+                <p class="name">Fries</p>
+                <img style="height: 300px;" src="/imgs/fries.jpeg">
+
+                <p class="price"><span>Rs. </span>80</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup4()">Add to cart</button>
+
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="recipe">
+                <p class="name">Veg Biryani</p>
+                <img src="/imgs/veg_biryani.jpeg">
+
+                <p class="price"><span> Rs. </span> 120 </p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup5()">Add to cart</button>
+
+            </div>
+
+            <!-- Recipe 6 -->
+            <div class="recipe">
+                <p class="name">Biryani</p>
+                <img style="height: 250px;" src="/imgs/biryani.jpeg">
+
+                <p class="price"><span>Rs. </span>200</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup6()">Add to cart</button>
+
+            </div>
+
+            <!-- recipe 7 -->
+            <div class="recipe">
+                <p class="name">Dosa</p>
+                <img src="/imgs/dosa.jpeg">
+
+                <p class="price"><span>Rs. </span>100</p>
+                <button src="#" class="btnStyle3 btnStyle" onclick="showPopup7()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 8 -->
+            <div class="recipe">
+                <p class="name">Idli Sambar</p>
+                <img style="height: 300px;" src="/imgs/idli_sambar.jpeg">
+
+                <p class="price"><span>Rs. </span>80</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup8()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 9 -->
+            <div class="recipe">
+                <p class="name">Paneer Tikka Masala</p>
+                <img src="/imgs/paneer.jpeg">
+
+                <p class="price"><span>Rs. </span>150</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup9()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 10 -->
+            <div class="recipe">
+                <p class="name">Medu Vada</p>
+                <img src="/imgs/medu_vada.jpeg">
+
+                <p class="price"><span>Rs. </span>80</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup10()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 11 -->
+            <div class="recipe">
+                <p class="name">Samosa</p>
+                <img src="/imgs/samosa.jpeg">
+
+                <p class="price"><span>Rs. </span>20</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup11()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 12 -->
+            <div class="recipe">
+                <p class="name">Malai Kofta</p>
+                <img src="/imgs/malai_kofta.jpeg">
+
+                <p class="price"><span>Rs. </span>100</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup12()">Add to cart</button>
+            </div>
+
+            <!-- Recipe 13 -->
+            <div class="recipe">
+                <p class="name">Chole Bhature</p>
+                <img src="/imgs/chole_bhature.jpeg">
+
+                <p class="price"><span>Rs. </span>100</p>
+                <button class="btnStyle3 btnStyle" onclick="showPopup13()">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Pop-up container -->
+    <div id="popup" class="popup">
+        <img id="popup-imgs" src="imgs/hamburger.png" alt="">
+        <hr />
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Bacon</li>
+            <li>Cheese</li>
+            <div class="popup-price">
+                <p>Rs 150</p>
+                <button id="Close" onclick="hidePopup()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup2" class="popup">
+        <img id="popup-imgs" src="imgs/pav_bhaji.jpeg" alt="">
+        <hr>
+        <div class="popup-div2">
+            <p>Ingredients</p>
+            <li>Mix Vegetables</li>
+            <li>Pav</li>
+            <li>Butter</li>
+            <div class="popup-price2">
+                <p>Rs 100</p>
+                <button id="Close" onclick="hidePopup2()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup3" class="popup">
+        <img id="popup-imgs" src="imgs/pizza.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Paneer</li>
+            <li>Cheese</li>
+            <div class="popup-price">
+                <p>Rs 120</p>
+                <button id="Close" onclick="hidePopup3()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup4" class="popup">
+        <img id="popup-imgs" src="imgs/fries.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Potatoes</li>
+            <li>Peri Peri Masala</li>
+            <div class="popup-price">
+                <p>Rs 80</p>
+                <button id="Close" onclick="hidePopup4()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup5" class="popup">
+        <img id="popup-imgs" src="imgs/veg_biryani.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Mix Veggies</li>
+            <li>Basmati Rice</li>
+            <div class="popup-price">
+                <p>Rs 120</p>
+                <button id="Close" onclick="hidePopup5()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup6" class="popup">
+        <img id="popup-imgs" src="imgs/biryani.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Chicken/Mutton</li>
+            <li>Basmati rice</li>        
+            <div class="popup-price">
+                <p>Rs 200</p>
+                <button id="Close" onclick="hidePopup6()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup7" class="popup">
+        <img id="popup-imgs" src="imgs/dosa.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Daal</li>
+            <li>Rice</li>
+            <div class="popup-price">
+                <p>Rs 100</p>
+                <button id="Close" onclick="hidePopup7()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup8" class="popup">
+        <img id="popup-imgs" src="imgs/idli_sambar.jpeg" alt="">
+        <hr>
+        <div class="popup-div8">
+            <p>Ingredients</p>
+            <li>Daal</li>
+            <li>Rice</li>
+            <li>Spices</li>
+            
+            <div class="popup-price8">
+                <p>Rs 80</p>
+                <button id="Close" onclick="hidePopup8()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup9" class="popup">
+        <img id="popup-imgs" src="imgs/paneer.jpeg" alt="">
+        <hr>
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Paneer</li>
+            <li>Spices</li>
+        
+            <div class="popup-price">
+                <p>Rs 150</p>
+                <button id="Close" onclick="hidePopup9()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup10" class="popup">
+        <img id="popup-imgs" src="imgs/medu_vada.jpeg" alt="">
+        <hr />
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Black Lentils</li>
+            <li>Spices</li>
+            
+            <div class="popup-price">
+                <p>Rs 80</p>
+                <button id="Close" onclick="hidePopup10()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup11" class="popup">
+        <img id="popup-imgs" src="imgs/samosa.jpeg" alt="">
+        <hr />
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Cubed Potatoes</li>
+            <li>Peas</li>
+
+            <div class="popup-price">
+                <p>Rs 20</p>
+                <button id="Close" onclick="hidePopup11()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup12" class="popup">
+        <img id="popup-imgs" src="imgs/malai_kofta.jpeg" alt="">
+        <hr />
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>Fried Ball Potatoes</li>
+            <li>Paneer</li>
+            
+            <div class="popup-price">
+                <p>Rs 100</p>
+                <button id="Close" onclick="hidePopup12()">Done </button>
+            </div>
+        </div>
+    </div>
+    <div id="popup13" class="popup">
+        <img id="popup-imgs" src="imgs/chole_bhature.jpeg" alt="">
+        <hr />
+        <div class="popup-div">
+            <p>Ingredients</p>
+            <li>White Chickpeas (Chole)</li>
+            <li>Bhatura/Puri</li>
+
+            <div class="popup-price">
+                <p>Rs 100</p>
+                <button id="Close" onclick="hidePopup13()">Done </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay background -->
+    <div id="overlay" class="overlay" onclick="hidePopup()"></div>
+    <div id="overlay2" class="overlay" onclick="hidePopup2()"></div>
+    <div id="overlay3" class="overlay" onclick="hidePopup3()"></div>
+    <div id="overlay4" class="overlay" onclick="hidePopup4()"></div>
+    <div id="overlay5" class="overlay" onclick="hidePopup5()"></div>
+    <div id="overlay6" class="overlay" onclick="hidePopup6()"></div>
+    <div id="overlay7" class="overlay" onclick="hidePopup7()"></div>
+    <div id="overlay8" class="overlay" onclick="hidePopup8()"></div>
+    <div id="overlay9" class="overlay" onclick="hidePopup9()"></div>
+    <div id="overlay10" class="overlay" onclick="hidePopup10()"></div>
+    <div id="overlay11" class="overlay" onclick="hidePopup11()"></div>
+    <div id="overlay12" class="overlay" onclick="hidePopup12()"></div>
+    <div id="overlay13" class="overlay" onclick="hidePopup13()"></div>
+
+</body>
+
+<script>
+
+    // JavaScript function to show the pop-up
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function showPopup2() {
+        document.getElementById('popup2').style.display = 'block';
+        document.getElementById('overlay2').style.display = 'block';
+    }
+    function showPopup3() {
+        document.getElementById('popup3').style.display = 'block';
+        document.getElementById('overlay3').style.display = 'block';
+    }
+    function showPopup4() {
+        document.getElementById('popup4').style.display = 'block';
+        document.getElementById('overlay4').style.display = 'block';
+    }
+    function showPopup5() {
+        document.getElementById('popup5').style.display = 'block';
+        document.getElementById('overlay5').style.display = 'block';
+    }
+    function showPopup6() {
+        document.getElementById('popup6').style.display = 'block';
+        document.getElementById('overlay6').style.display = 'block';
+    }
+    function showPopup7() {
+        document.getElementById('popup7').style.display = 'block';
+        document.getElementById('overlay7').style.display = 'block';
+    }
+    function showPopup8() {
+        document.getElementById('popup8').style.display = 'block';
+        document.getElementById('overlay8').style.display = 'block';
+    }
+    function showPopup9() {
+        document.getElementById('popup9').style.display = 'block';
+        document.getElementById('overlay9').style.display = 'block';
+    }
+    function showPopup10() {
+        document.getElementById('popup10').style.display = 'block';
+        document.getElementById('overlay10').style.display = 'block';
+    }
+    function showPopup11() {
+        document.getElementById('popup11').style.display = 'block';
+        document.getElementById('overlay11').style.display = 'block';
+    }
+    function showPopup12() {
+        document.getElementById('popup12').style.display = 'block';
+        document.getElementById('overlay12').style.display = 'block';
+    }
+    function showPopup13() {
+        document.getElementById('popup13').style.display = 'block';
+        document.getElementById('overlay13').style.display = 'block';
+    }
+
+    // JavaScript function to hide the pop-up
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+    function hidePopup2() {
+        document.getElementById('popup2').style.display = 'none';
+        document.getElementById('overlay2').style.display = 'none';
+    }
+    function hidePopup3() {
+        document.getElementById('popup3').style.display = 'none';
+        document.getElementById('overlay3').style.display = 'none';
+    }
+    function hidePopup4() {
+        document.getElementById('popup4').style.display = 'none';
+        document.getElementById('overlay4').style.display = 'none';
+    }
+    function hidePopup5() {
+        document.getElementById('popup5').style.display = 'none';
+        document.getElementById('overlay5').style.display = 'none';
+    }
+    function hidePopup6() {
+        document.getElementById('popup6').style.display = 'none';
+        document.getElementById('overlay6').style.display = 'none';
+    }
+    function hidePopup7() {
+        document.getElementById('popup7').style.display = 'none';
+        document.getElementById('overlay7').style.display = 'none';
+    }
+    function hidePopup8() {
+        document.getElementById('popup8').style.display = 'none';
+        document.getElementById('overlay8').style.display = 'none';
+    }
+    function hidePopup9() {
+        document.getElementById('popup9').style.display = 'none';
+        document.getElementById('overlay9').style.display = 'none';
+    }
+    function hidePopup10() {
+        document.getElementById('popup10').style.display = 'none';
+        document.getElementById('overlay10').style.display = 'none';
+    }
+    function hidePopup11() {
+        document.getElementById('popup11').style.display = 'none';
+        document.getElementById('overlay11').style.display = 'none';
+    }
+    function hidePopup12() {
+        document.getElementById('popup12').style.display = 'none';
+        document.getElementById('overlay12').style.display = 'none';
+    }
+    function hidePopup13() {
+        document.getElementById('popup13').style.display = 'none';
+        document.getElementById('overlay13').style.display = 'none';
+    }
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchBar = document.getElementById('searchBar');
+
+        if (searchBar) {
+            searchBar.addEventListener('input', function () {
+                const searchTerm = searchBar.value.toLowerCase();
+                const recipeItems = document.querySelectorAll('.recipe');
+
+                recipeItems.forEach(recipeItem => {
+                    const recipeNameElement = recipeItem.querySelector('.name');
+
+                    if (recipeNameElement) {
+                        const recipeName = recipeNameElement.textContent.toLowerCase();
+                        const isVisible = recipeName.includes(searchTerm);
+
+                        recipeItem.style.display = isVisible ? 'block' : 'none';
+                    }
+                });
+            });
+        } else {
+            // console.error('Search bar not found.');
+        }
+    });
+</script>
+
+</html>

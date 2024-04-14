@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url(images/background.jpg);
+    background-color: rgba(225, 225, 225, 1.7);
+    background-size: cover;
+    background-position: center;
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    background-color: #fdb1b1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+input {
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" onsubmit="validateForm(event)">
+            <h1>Registration Form</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <label for="address">Address:</label>
+            <textarea name="address" id="address" cols="10" rows="10" required></textarea>
+            <br>
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+
+            </select>
+            <br>
+            <br>
+         
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+function validateForm(event) {
+    event.preventDefault(); // Prevent the form from submitting by default
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+    var address = document.getElementById('address').value;
+    var gender = document.getElementById('gender').value;
+
+
+    // Basic validation
+    if (!username || !password || !confirmPassword ||!address || !gender) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+    }
+
+    // If all validations pass, you can submit the form or perform additional actions here
+    alert('Registration successful!');
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Food Website</title>
+    <style>
+        body{
+            background-image: url(images/background.jpg);
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.1);
+
+
+        }
+        .form1 {
+
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #fb9b9b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .signup-link {
+            display: block;
+            margin-top: 16px;
+            color: #333;
+        }
+header {
+    height: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(225, 225, 162);
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+
+header .navbar a {
+    font-size: 20px;
+    padding: 0 1.5rem;
+    text-decoration: none;
+    color: #0b0b0b;
+    font-weight: 500;
+}
+header .navbar a:hover{
+    background-color:rgb(243, 47, 80);
+    border-radius: 10%;
+    color: white;
+}
+.navbarright {
+    padding-left: 25%;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: cursive;
+    color: rgb(252, 3, 103);
+}
+    </style>
+</head>
+<body >
+  <header>
+    <img src="images/facebook.png" alt="img1">
+    <img src="images/instagram.png" alt="img2">
+    <img src="images/twitter.png" alt="img3">
+    <div class="menu-icon">&#9776;</div>
+<div class="navbar menu-box">
+<nav class="navbar">
+    <a href="home.html" > Home </a>
+    <a href="specialoffers.html">Special Offer </a>
+    <a href="menu.html">Menu</a>
+    <a href="aboutus.html" >About Us</a>
+</nav>
+</div>
+
+</div>
+ <p class="navbarright">Place For Foodies</p>
+    </header>
+<div class="form1">
+    <form id="signin-form">
+        <h2>Sign In</h2>
+        <label for="signin-email">Email:</label>
+        <input type="email" id="signin-email" name="email" required>
+
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" name="password" required>
+
+        <button type="submit">Sign In</button>
+
+        <a href="#" class="signup-link" onclick="showSignupForm()">Don't have an account? Sign Up</a>
+    </form>
+
+    <form id="signup-form" style="display: none;" action="register.html">
+        <h2>Sign Up</h2>
+        <label for="signup-name">Full Name:</label>
+        <input type="text" id="signup-name" name="name" required>
+
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="email" required>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required>
+
+
+        <label for="signup-password">Confirm Password:</label>
+        <input type="password" id="signup-password" name="cpassword" required>
+        <button type="submit">Sign Up</button>
+
+        <a href="#" class="signup-link" onclick="showSigninForm()">Already have an account? Sign In</a>
+    </form>
+</div>
+
+    <script>
+        function showSignupForm() {
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+
+        function showSigninForm() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('signin-form').style.display = 'block';
+        }
+    </script>
+
+    </body>
+    </html>

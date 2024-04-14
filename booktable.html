@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dk.css">
+    <title>Book Table</title>
+    <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fad5d5;
+}
+h2{
+  text-decoration: underline  dotted rgb(128, 0, 0);
+}
+
+.reservation-form{
+  max-width: 400px;
+  margin: 50px auto;
+  padding: px;;
+  background-color: #add3f3;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 10px 15px 5px #888888;
+  display:'none';
+  
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px ;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.hidden {
+  display: none;
+  
+}
+
+#confirmationMessage {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #06ac38;
+  color: #fff;
+  border-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="reservation-form">
+        
+      
+        <form id="reservationForm">
+
+          <h2>Book a table </h2><br
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="mob">Mobile No:</label>
+            <input type="tel" id="mob" name="mobile" pattern="[0-9]{10}" required>
+            <br><br>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <br><br>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+            <br><br>
+            <button type="button" onclick="submitReservation()" id="booktable">Book Table</button>
+            <button type="button" class="btn cancel" style="background-color: red;" >
+              <a href="home.html" style="color: wheat;">Back To Home</a></button>
+        </form>
+    </div>
+
+    <div id="confirmationMessage" class="hidden">
+
+      <h3> Thank you</h3>
+      <p>Reservation confirmed...!</p>
+       <p><b> हमें आपकी सेवा का मौका दीजिए...!</b>
+      </p>
+        <p id="printedData"></p>
+    </div>
+
+    <script >
+
+function submitReservation() {
+
+const name = document.getElementById('name').value;
+const date = document.getElementById('date').value;
+const mob = document.getElementById('mob').value;
+const time = document.getElementById('time').value;
+const guests = document.getElementById('guests').value;
+
+
+const confirmationMessage = `Reservation Details:
+  Name: ${name} 
+  Mobile No: ${mob}
+  Date: ${date}
+  Time: ${time}
+  Guests: ${guests}`;
+  
+
+document.getElementById('reservationForm').style.display = 'none' ;
+document.getElementById('confirmationMessage').style.display = 'block';
+document.getElementById('printedData').textContent = confirmationMessage;
+
+
+setTimeout(function () {
+  document.getElementById('printedData').textContent += "\nधन्यवाद.....🙏🏻";
+}, 3000);
+}
+
+    </script>
+</body>
+</html>

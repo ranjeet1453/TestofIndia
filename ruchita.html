@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Order</title>
+
+    <style>
+        body {
+            background-image: url(images/background.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+        .container {
+            width: 500px;
+            opacity: 1;
+
+
+        }
+
+        .form1 {
+
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #confirmationMessage {
+            width: fit-content;
+            text-align: center;
+            margin-top: 300px;
+            padding: 30px;
+            background-color: #06ac38;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 30px;
+        }
+
+        #myalert {
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        #orderForm {
+            font-size: 20px;
+
+            background-color: rgb(248, 165, 165);
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        form {
+            text-align: center;
+            padding: 30px;
+        }
+
+        h3 {
+            font-size: 40px;
+        }
+
+        input {
+            width: 200px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form1">
+
+            <form id="orderForm" onsubmit="return false;">
+                <h3>Confirm Order</h3>
+                <div>
+                    <span>Name<font color="red">*</font>
+                        </lab>
+                        <input type="text" id="name" name="username" placeholder="Enter your name" required>
+                </div><br>
+
+                <div class="inputBox">
+                    <span>Address<font color="red">*</font>
+                        </lab>
+                        <input type="text" id="add" name="address" placeholder="Enter your address" required>
+                </div><br>
+                <div class="inputBox">
+                    <span>Phone<font color="red">*</font></span>
+                    <input type="text" id="mob" name="mob" placeholder="Enter your phone no" maxlength="10" required>
+                </div>
+                <div>
+                </div><br>
+                <div class="inputBox">
+                    <span>Payment Method<font color="red">*</font></span>
+                    <select name="method">
+                        <option value="cash on delivery" selected>cash on devlivery</option>
+                        <option value="credit cart">credit cart</option>
+                        <option value="paypal">paypal</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>City<font color="red">*</font></span>
+                    <input type="text" placeholder="e.g. mumbai" name="city" required>
+                </div>
+                <div class="inputBox">
+                    <span>state<font color="red">*</font></span>
+                    <input type="text" placeholder="e.g. maharashtra" name="state" required>
+                </div>
+                <div class="inputBox">
+                    <span>country<font color="red">*</font></span>
+                    <input type="text" placeholder="e.g. india" name="country" required>
+                </div>
+                <div class="inputBox">
+                    <span>Pincode<font color="red">*</font></span>
+                    <input type="text" placeholder="e.g. 123456" name="pin_code" required>
+                </div>
+
+                <br>
+                <div>
+                    <button type="button" onclick="confirmOrder()" id="myalert"
+                        style="background-color: green; color: white; border-radius: 5px;"> Confirm Order </button>
+                </div>
+        </div>
+        </form>
+    </div>
+
+    </div>
+    <div id="confirmationMessage" class="hidden">
+        <p id="printedData">Your order placed successfully.... Visit again!!!</p>
+    </div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        function confirmOrder() {
+
+            const confirmationMessage = "Your order placed successfully.... Visit again!!!";
+
+            document.getElementById('orderForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('printedData').textContent = confirmationMessage;
+
+        }
+    </script>
+
+</body>
+
+</html>
